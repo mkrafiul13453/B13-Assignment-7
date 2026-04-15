@@ -1,0 +1,145 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "picture": "https://randomuser.me/api/portraits/men/1.jpg",
+        "email": "john@example.com",
+        "days_since_contact": 12,
+        "status": "overdue",
+        "tags": [
+            "college",
+            "close friend"
+        ],
+        "bio": "Met in university. Love hiking together.",
+        "goal": 14,
+        "next_due_date": "2025-07-20"
+    },
+    {
+        "id": 2,
+        "name": "Emma Watson",
+        "picture": "https://randomuser.me/api/portraits/women/2.jpg",
+        "email": "emma@example.com",
+        "days_since_contact": 5,
+        "status": "on-track",
+        "tags": [
+            "work",
+            "team"
+        ],
+        "bio": "Colleague from previous company.",
+        "goal": 10,
+        "next_due_date": "2025-07-25"
+    },
+    {
+        "id": 3,
+        "name": "Michael Smith",
+        "picture": "https://randomuser.me/api/portraits/men/3.jpg",
+        "email": "michael@example.com",
+        "days_since_contact": 20,
+        "status": "overdue",
+        "tags": [
+            "gym",
+            "buddy"
+        ],
+        "bio": "Workout partner at the gym.",
+        "goal": 7,
+        "next_due_date": "2025-07-18"
+    },
+    {
+        "id": 4,
+        "name": "Sophia Brown",
+        "picture": "https://randomuser.me/api/portraits/women/4.jpg",
+        "email": "sophia@example.com",
+        "days_since_contact": 2,
+        "status": "on-track",
+        "tags": [
+            "family"
+        ],
+        "bio": "Cousin, lives nearby.",
+        "goal": 5,
+        "next_due_date": "2025-07-30"
+    },
+    {
+        "id": 5,
+        "name": "David Johnson",
+        "picture": "https://randomuser.me/api/portraits/men/5.jpg",
+        "email": "david@example.com",
+        "days_since_contact": 15,
+        "status": "almost due",
+        "tags": [
+            "client"
+        ],
+        "bio": "Important client for freelance projects.",
+        "goal": 10,
+        "next_due_date": "2025-07-19"
+    },
+    {
+        "id": 6,
+        "name": "Olivia Davis",
+        "picture": "https://randomuser.me/api/portraits/women/6.jpg",
+        "email": "olivia@example.com",
+        "days_since_contact": 1,
+        "status": "on-track",
+        "tags": [
+            "best friend"
+        ],
+        "bio": "Childhood best friend.",
+        "goal": 3,
+        "next_due_date": "2025-08-01"
+    },
+    {
+        "id": 7,
+        "name": "James Wilson",
+        "picture": "https://randomuser.me/api/portraits/men/7.jpg",
+        "email": "james@example.com",
+        "days_since_contact": 9,
+        "status": "almost due",
+        "tags": [
+            "networking"
+        ],
+        "bio": "Met at a tech conference.",
+        "goal": 14,
+        "next_due_date": "2025-07-28"
+    },
+    {
+        "id": 8,
+        "name": "Ava Martinez",
+        "picture": "https://randomuser.me/api/portraits/women/8.jpg",
+        "email": "ava@example.com",
+        "days_since_contact": 30,
+        "status": "overdue",
+        "tags": [
+            "school"
+        ],
+        "bio": "Old school friend.",
+        "goal": 20,
+        "next_due_date": "2025-07-15"
+    },
+    {
+        "id": 9,
+        "name": "William Anderson",
+        "picture": "https://randomuser.me/api/portraits/men/9.jpg",
+        "email": "william@example.com",
+        "days_since_contact": 3,
+        "status": "on-track",
+        "tags": [
+            "startup"
+        ],
+        "bio": "Startup co-founder friend.",
+        "goal": 7,
+        "next_due_date": "2025-07-29"
+    },
+    {
+        "id": 10,
+        "name": "Mia Taylor",
+        "picture": "https://randomuser.me/api/portraits/women/10.jpg",
+        "email": "mia@example.com",
+        "days_since_contact": 18,
+        "status": "almost due",
+        "tags": [
+            "mentor"
+        ],
+        "bio": "Mentor from university.",
+        "goal": 12,
+        "next_due_date": "2025-07-21"
+    }
+]

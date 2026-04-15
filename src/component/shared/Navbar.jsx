@@ -9,7 +9,7 @@ const Navbar = () => {
     const navLinkStyles = ({ isActive }) =>
         `flex items-center gap-2 px-4 py-2 rounded-md transition-all duration-300 ${isActive
             ? 'bg-[#1a4335] text-white shadow-md' // Selected state (Dark Green)
-            : 'text-gray-600 hover:bg-gray-100'   // Default state
+            : 'text-gray-600 hover:bg-gray-200'   // Default state
         }`;
 
     return (
