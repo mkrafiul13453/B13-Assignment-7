@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Timeline from './pages/Timeline'
 import Stats from './pages/Stats'
 import './index.css'
+import Details from './pages/Details'
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
         path: "/stats", 
         element: <Stats/>,
       },
+      {
+        path:"/details/:id",
+        element:<Details/>,
+      }
     ],
   },
 ]);
