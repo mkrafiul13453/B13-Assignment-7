@@ -1,41 +1,75 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { HiOutlineHome } from 'react-icons/hi';
-import { IoTimeOutline } from 'react-icons/io5';
-import { IoStatsChartOutline } from 'react-icons/io5';
+import { HiOutlineHome, HiMenu, HiX } from 'react-icons/hi';
+import { IoTimeOutline, IoStatsChartOutline } from 'react-icons/io5';
 
 const Navbar = () => {
-    // অ্যাক্টিভ হলে কেমন দেখাবে তার জন্য একটি কমন স্টাইল
+    const [isOpen, setIsOpen] = useState(false);
+
     const navLinkStyles = ({ isActive }) =>
         `flex items-center gap-2 px-4 py-2 rounded-md transition-all duration-300 ${isActive
-            ? 'bg-[#1a4335] text-white shadow-md' // Selected state (Dark Green)
-            : 'text-gray-600 hover:bg-gray-200'   // Default state
+            ? 'bg-[#1a4335] text-white shadow-md'
+            : 'text-gray-600 hover:bg-gray-200'
         }`;
 
     return (
-        <nav className="flex items-center justify-between px-10 py-4 bg-white border-b sticky top-0 z-50">
-            {/* Logo Section */}
-            <div className="text-2xl font-bold text-[#1a4335]">
-                Keen<span className="text-[#2d6a4f]">Keeper</span>
+        <nav className="bg-white border-b sticky top-0 z-50">
+            <div className="flex items-center justify-between px-6 py-4 md:px-10">
+
+                {/* Logo */}
+                <div className="text-2xl font-bold text-[#1a4335]">
+                    Keen<span className="text-[#2d6a4f]">Keeper</span>
+                </div>
+
+                {/* Desktop Menu */}
+                <div className="hidden md:flex gap-4 font-medium">
+                    <NavLink to="/" className={navLinkStyles}>
+                        <HiOutlineHome className="text-xl" />
+                        Home
+                    </NavLink>
+
+                    <NavLink to="/timeline" className={navLinkStyles}>
+                        <IoTimeOutline className="text-xl" />
+                        Timeline
+                    </NavLink>
+
+                    <NavLink to="/stats" className={navLinkStyles}>
+                        <IoStatsChartOutline className="text-xl" />
+                        Stats
+                    </NavLink>
+                </div>
+
+                {/* Mobile Menu Button */}
+                <div className="md:hidden">
+                    <button onClick={() => setIsOpen(!isOpen)}>
+                        {isOpen ? (
+                            <HiX className="text-2xl" />
+                        ) : (
+                            <HiMenu className="text-2xl" />
+                        )}
+                    </button>
+                </div>
             </div>
 
-            {/* Navigation Links */}
-            <div className="flex gap-4 font-medium">
-                <NavLink to="/" className={navLinkStyles}>
-                    <HiOutlineHome className="text-xl" />
-                    Home
-                </NavLink>
+            {/* Mobile Dropdown Menu */}
+            {isOpen && (
+                <div className="md:hidden flex flex-col gap-2 px-6 pb-4 font-medium">
+                    <NavLink to="/" className={navLinkStyles} onClick={() => setIsOpen(false)}>
+                        <HiOutlineHome className="text-xl" />
+                        Home
+                    </NavLink>
 
-                <NavLink to="/timeline" className={navLinkStyles}>
-                    <IoTimeOutline className="text-xl" />
-                    Timeline
-                </NavLink>
+                    <NavLink to="/timeline" className={navLinkStyles} onClick={() => setIsOpen(false)}>
+                        <IoTimeOutline className="text-xl" />
+                        Timeline
+                    </NavLink>
 
-                <NavLink to="/stats" className={navLinkStyles}>
-                    <IoStatsChartOutline className="text-xl" />
-                    Stats
-                </NavLink>
-            </div>
+                    <NavLink to="/stats" className={navLinkStyles} onClick={() => setIsOpen(false)}>
+                        <IoStatsChartOutline className="text-xl" />
+                        Stats
+                    </NavLink>
+                </div>
+            )}
         </nav>
     );
 };
