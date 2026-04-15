@@ -16,12 +16,10 @@ const Navbar = () => {
         <nav className="bg-white border-b sticky top-0 z-50">
             <div className="flex items-center justify-between px-6 py-4 md:px-10">
 
-                {/* Logo */}
                 <div className="text-2xl font-bold text-[#1a4335]">
                     Keen<span className="text-[#2d6a4f]">Keeper</span>
                 </div>
 
-                {/* Desktop Menu */}
                 <div className="hidden md:flex gap-4 font-medium">
                     <NavLink to="/" className={navLinkStyles}>
                         <HiOutlineHome className="text-xl" />
@@ -39,7 +37,6 @@ const Navbar = () => {
                     </NavLink>
                 </div>
 
-                {/* Mobile Menu Button */}
                 <div className="md:hidden">
                     <button onClick={() => setIsOpen(!isOpen)}>
                         {isOpen ? (
@@ -51,7 +48,6 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Mobile Dropdown Menu */}
             {isOpen && (
                 <div className="md:hidden flex flex-col gap-2 px-6 pb-4 font-medium">
                     <NavLink to="/" className={navLinkStyles} onClick={() => setIsOpen(false)}>

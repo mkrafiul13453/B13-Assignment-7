@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { FaPhoneAlt, FaRegCommentDots, FaVideo, FaEdit } from 'react-icons/fa';
 
 const Details = () => {
-    const { id } = useParams(); // URL থেকে ID নেওয়া হচ্ছে
+    const { id } = useParams(); 
     const [friend, setFriend] = useState(null);
 
     useEffect(() => {
@@ -21,7 +21,6 @@ const Details = () => {
         <div className="min-h-screen bg-gray-50 py-10 px-6">
             <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                {/* প্রোফাইল সেকশন (Left) */}
                 <div className="bg-white p-8 rounded-2xl shadow-sm flex flex-col items-center text-center">
                     <img src={friend.picture} alt={friend.name} className="w-24 h-24 rounded-full mb-4 border-4 border-gray-100" />
                     <h2 className="text-2xl font-bold text-gray-800">{friend.name}</h2>
@@ -34,7 +33,6 @@ const Details = () => {
                     <p className="text-sm text-gray-400 mt-1 italic">Email: {friend.email}</p>
                 </div>
 
-                {/* স্ট্যাটাস ও অ্যাকশন (Right) */}
                 <div className="md:col-span-2 space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                         <div className="bg-white p-6 rounded-2xl shadow-sm">
