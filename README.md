@@ -1,16 +1,23 @@
-# React + Vite
+# KeenKeeper
+KeenKeeper is a comprehensive communication platform that enables users to connect through video calls, audio calls, and instant messaging. It goes beyond simple communication by providing a detailed history of interactions and visual data insights.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Short Description
+KeenKeeper allows users to engage in seamless video, audio, and text-based conversations. The platform features an integrated interaction timeline to track call history and utilizes data visualization via pie charts to analyze the distribution of your communication methods (Calls vs. Messages).
 
-Currently, two official plugins are available:
+# Tech Stack
+Frontend: React.js
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Routing: React Router DOM
 
-## React Compiler
+Styling: Tailwind CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Data Visualization: Recharts
 
-## Expanding the ESLint configuration
+# Key Features
+Multi-Channel Communication: High-quality video calls, audio calls, and real-time text messaging.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Interaction History: A dedicated timeline to track when and with whom you have communicated.
+
+Data Visualization: Integrated Pie Charts to visualize the ratio of video calls, audio calls, and messages sent/received.
+
+Responsive Design: Built with Tailwind CSS to ensure a smooth experience across all devices.
