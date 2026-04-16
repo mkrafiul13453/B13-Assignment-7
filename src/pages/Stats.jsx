@@ -5,20 +5,17 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recha
 const Stats = () => {
     const { interactions } = useTimeline();
 
-    // ১. ডেটা প্রসেসিং: interactions অ্যারে থেকে সংখ্যা বের করা
     const dataCount = interactions.reduce((acc, curr) => {
         acc[curr.type] = (acc[curr.type] || 0) + 1;
         return acc;
     }, {});
 
-    // ২. চার্টের জন্য ডেটা ফরম্যাট করা
     const chartData = [
         { name: 'Call', value: dataCount['Call'] || 0 },
         { name: 'Text', value: dataCount['Text'] || 0 },
         { name: 'Video', value: dataCount['Video'] || 0 },
     ];
 
-    // ৩. চার্টের কালার নির্ধারণ
     const COLORS = ['#1a4335', '#4ade80', '#fbbf24'];
 
     return (
@@ -26,7 +23,7 @@ const Stats = () => {
             <div className="max-w-4xl mx-auto bg-white p-8 rounded-3xl shadow-sm">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Interaction Statistics</h2>
 
-                <div className="h-[400px] w-full">
+                <div className="h-100 w-full">
                     {interactions.length > 0 ? (
                         <ResponsiveContainer width="100%" height="100%">
                             <PieChart>
@@ -54,7 +51,6 @@ const Stats = () => {
                     )}
                 </div>
 
-                {/* সামারি কার্ডস */}
                 <div className="grid grid-cols-3 gap-4 mt-10">
                     {chartData.map((item, idx) => (
                         <div key={idx} className="bg-gray-50 p-4 rounded-2xl text-center border border-gray-100">

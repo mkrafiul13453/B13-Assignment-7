@@ -8,7 +8,7 @@ export const TimelineProvider = ({ children }) => {
     const addInteraction = (type, personName) => {
         const newInteraction = {
             id: Date.now(),
-            type: type, // 'Call', 'Text', or 'Video'
+            type: type, 
             name: personName,
             date: new Date().toLocaleDateString('en-US', {
                 month: 'long',
