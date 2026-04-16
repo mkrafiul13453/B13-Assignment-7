@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTimeline } from '../context/TimelineContext';
-import { FaPhoneAlt, FaRegCommentDots, FaVideo } from 'react-icons/fa'; 
-
+import { FaPhoneAlt, FaRegCommentDots, FaVideo } from 'react-icons/fa';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Details = () => {
-    const { id } = useParams(); 
+    const { id } = useParams();
     const { addInteraction } = useTimeline();
     const [friend, setFriend] = useState(null);
 
@@ -17,12 +18,26 @@ const Details = () => {
             });
     }, [id]);
 
+    const handleAction = (type) => {
+        addInteraction(type, friend.name);
+        toast.success(`${type} interaction added for ${friend.name}!`, {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: "light",
+        });
+    };
+
     if (!friend) return <div className="text-center py-20">Loading...</div>;
 
     return (
         <div className="min-h-screen bg-gray-50 py-10 px-6">
-            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <ToastContainer />
 
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="bg-white p-8 rounded-2xl shadow-sm flex flex-col items-center text-center">
                     <img src={friend.picture} alt={friend.name} className="w-24 h-24 rounded-full mb-4 border-4 border-gray-100" />
                     <h2 className="text-2xl font-bold text-gray-800">{friend.name}</h2>
@@ -55,19 +70,19 @@ const Details = () => {
                         <h4 className="text-lg font-semibold text-gray-800 mb-6">Quick Check-In</h4>
                         <div className="grid grid-cols-3 gap-4">
                             <button
-                                onClick={() => addInteraction('Call', friend.name)}
+                                onClick={() => handleAction('Call')}
                                 className="flex flex-col items-center gap-3 py-6 border border-gray-100 rounded-2xl hover:bg-gray-50 transition active:scale-95">
                                 <FaPhoneAlt className="text-xl text-gray-700" />
                                 <span className="text-sm font-medium">Call</span>
                             </button>
                             <button
-                                onClick={() => addInteraction('Text', friend.name)}
+                                onClick={() => handleAction('Text')}
                                 className="flex flex-col items-center gap-3 py-6 border border-gray-100 rounded-2xl hover:bg-gray-50 transition active:scale-95">
                                 <FaRegCommentDots className="text-xl text-gray-700" />
                                 <span className="text-sm font-medium">Text</span>
                             </button>
                             <button
-                                onClick={() => addInteraction('Video', friend.name)}
+                                onClick={() => handleAction('Video')}
                                 className="flex flex-col items-center gap-3 py-6 border border-gray-100 rounded-2xl hover:bg-gray-50 transition active:scale-95">
                                 <FaVideo className="text-xl text-gray-700" />
                                 <span className="text-sm font-medium">Video</span>
