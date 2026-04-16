@@ -12,7 +12,7 @@ const Footer = () => {
                 <h2 className="text-5xl font-bold mb-4 tracking-tight">KeenKeeper</h2>
 
                 <p className="text-gray-300 max-w-2xl mb-8 leading-relaxed">
-                    Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
+                    Your personal shelf of meaningful connections and nurture the relationships matter most.
                 </p>
 
                 <div className="mb-10">
